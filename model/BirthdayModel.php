@@ -13,7 +13,7 @@ function getAllBirthdays()
 {
 	$db = openDatabaseConnection();
 
-	$sql = "SELECT * FROM birthdays ORDER BY month, day, year";
+	$sql = "SELECT * FROM birthdays ORDER BY id, day, month, year";
 	$query = $db->prepare($sql);
 	$query->execute();
 	$db = null;
@@ -52,7 +52,7 @@ function deleteBirthday($id = null)
 	}
 	
 	$db = openDatabaseConnection();
-	
+
 	$sql = "DELETE FROM birthdays WHERE id=:id ";
 	$query = $db->prepare($sql);
 	$query->execute(array(
