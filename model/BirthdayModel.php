@@ -2,6 +2,7 @@
 function getBirthday($id) 
 {
 	$db = openDatabaseConnection();
+
 	$sql = "SELECT * FROM birthdays WHERE id = :id";
 	$query = $db->prepare($sql);
 	$query->execute(array(":id" => $id));
@@ -11,6 +12,7 @@ function getBirthday($id)
 function getAllBirthdays() 
 {
 	$db = openDatabaseConnection();
+
 	$sql = "SELECT * FROM birthdays ORDER BY month, day, year";
 	$query = $db->prepare($sql);
 	$query->execute();
@@ -30,6 +32,7 @@ function editBirthday()
 	}
 	
 	$db = openDatabaseConnection();
+
 	$sql = "UPDATE birthdays SET person = :person, day = :day, month = :month, year = :year WHERE id = :id";
 	$query = $db->prepare($sql);
 	$query->execute(array(
@@ -49,6 +52,7 @@ function deleteBirthday($id = null)
 	}
 	
 	$db = openDatabaseConnection();
+	
 	$sql = "DELETE FROM birthdays WHERE id=:id ";
 	$query = $db->prepare($sql);
 	$query->execute(array(
@@ -69,6 +73,7 @@ function createBirthday()
 	}
 	
 	$db = openDatabaseConnection();
+
 	$sql = "INSERT INTO birthdays(person, day, month, year) VALUES (:person, :day, :month, :year)";
 	$query = $db->prepare($sql);
 	$query->execute(array(
