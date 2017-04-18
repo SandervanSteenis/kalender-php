@@ -22,5 +22,6 @@
 		<?php } ?>
 
 	</table>
+	<br>
 	<a href="<?= URL ?>birthday/create">Toevoegen</a>
 </div>

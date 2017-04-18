@@ -13,7 +13,7 @@ function getAllBirthdays()
 {
 	$db = openDatabaseConnection();
 
-	$sql = "SELECT * FROM birthdays ORDER BY id, day, month, year";
+	$sql = "SELECT * FROM birthdays ORDER BY month, day, id, year";
 	$query = $db->prepare($sql);
 	$query->execute();
 	$db = null;
