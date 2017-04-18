@@ -1,4 +1,5 @@
 <div class="container">
+    <h1>Vul de gegevens in</h1>
 	<form action="<?= URL ?>birthday/createSave" method="post">
 	
 		<input type="text" name="person" placeholder="Name | John">
